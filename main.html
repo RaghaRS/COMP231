@@ -1,0 +1,352 @@
+<html>
+   
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<body>
+<div class="container">
+<img src="/Users/ragha/Downloads/attachments/logo.jpg" alt="logo" style="width:200px; float:right; clear:right;" onclick="backHome()";></div>
+<p>
+<h2>NOTIFICATIONS!!!</h2></p>
+<div class="MATHEMATICS">
+  <p><strong>MATHEMATICS</strong> Chapter 2: Logarithms - Due date for assignment submission is 8/15/23</p>
+</div>
+
+<div class="GENERIC">
+  <p><strong>GENERIC</strong> Convocation is rescheduled to 9/25/23</p>
+</div>
+
+<div class="SCIENCE">
+  <p><strong>SCIENCE</strong> Biology: Disection class in the noon Today</p>
+</div>
+
+<div class="ENGLISH">
+  <p><strong>ENGLISH</strong> Grammar 3 assignments due on 8/16/23</p>
+</div>
+
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/ragha/Downloads/attachments/Math.jpg" alt="Maths" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>MATHEMATICS</h1>
+      <p>Professor: Ashley Teresa Joy</p>
+      <p>
+	<button class="NOTES" style="font-size:30px" onclick="MathNotes()">NOTES</button> 
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/ragha/Downloads/attachments/science.jpg" alt="Science" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>SCIENCE</h1>
+      <p>Professor: James Ranson</p>
+      <p>
+	<button class="NOTES" style="font-size:30px" onclick="ScienceNotes()">NOTES</button> 
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/ragha/Downloads/attachments/engl.jpg" alt="ENGLISH" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>ENGLISH</h1>
+      <p>Professor: Maria Dorathy</p>
+      <p>
+	<button class="NOTES" style="font-size:30px" onclick="EnglishNotes()">NOTES</button> 
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/Users/ragha/Downloads/attachments/All.jpg" alt="GENERIC" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Generic Notes</h1>
+      <p>My NOTES!!!</p>
+      <p>
+	<button class="NOTES" style="font-size:30px" onclick="GeneralNotes()">NOTES</button> 
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function notes(){
+document.getElementById("notes").style.display = "block";
+var fileName = document.getElementById("txtHeader");
+var fileContent = document.getElementById("txtContent");
+
+fileName.value="";
+fileContent.value="";
+function downloadFile()
+{
+if(fileName.value === "" || fileContent.value ==="")
+window.alert("Please enter File name and content");
+else
+{
+var e = fileContent.value;
+var c = document.createElement("a");
+c.download = fileName.value + ".txt";
+var t = new Blob([e], {
+type: "text/plain"
+});
+c.href = window.URL.createObjectURL(t);
+c.click();
+}
+}
+
+function changeStyle(propertyName)
+{
+switch(propertyName)
+{
+case "b":
+if(fileContent.style.fontWeight === "bold")
+fileContent.style.fontWeight = "normal";
+else
+fileContent.style.fontWeight = "bold";
+break;
+case "i":
+if(fileContent.style.fontStyle === "italic")
+fileContent.style.fontStyle = "normal";
+else
+fileContent.style.fontStyle = "italic";
+break;
+case "n":
+fileContent.style.fontWeight = "normal";
+fileContent.style.fontStyle = "normal";
+fileContent.style.textDecoration = "none";
+break;
+case "u":
+if(fileContent.style.textDecoration === "underline")
+fileContent.style.textDecoration = "none";
+else
+fileContent.style.textDecoration = "underline"
+break;
+
+}
+}
+}
+function GeneralNotes(){
+    window.location.href="\GeneralNotes.html";
+    }
+
+function EnglishNotes(){
+    window.location.href="\EnglishNotes.html";
+    }
+
+function ScienceNotes(){
+    window.location.href="\ScienceNotes.html";
+    }
+
+function MathNotes(){
+    window.location.href="\MathNotes.html";
+    }
+
+function backHome(){
+    window.location.href="\Home.html";
+    }
+</script>
+
+<style>
+div {
+  margin-bottom: 15px;
+  padding: 4px 12px;
+}
+
+.MATHEMATICS {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+
+.GENERIC {
+  background-color: #ddffdd;
+  border-left: 6px solid #04AA6D;
+}
+
+.SCIENCE {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+
+
+.ENGLISH{
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+}
+
+body
+{
+font-family: Arial, Helvetica, sans-serif;
+}
+.main
+{
+background-color: #fff;
+height: 100%;
+padding: 20px;
+}
+
+.form-popup {
+  display: none;
+margin: 0 auto;
+width: 100%;
+  position: fixed;
+ 
+}
+
+.form-container
+{
+border:1px solid #246ded;
+width:100%;
+height: 100%;
+background-color: white;
+}
+.header
+{
+background-color: #246ded;
+height: 7%;
+width: 100%;
+padding: 5px 0px;
+}
+
+.content
+{
+background-color: #fff;
+height: 84%;
+width: 100%;
+border-bottom: 1px #141414 dotted;
+}
+
+.options
+{
+height: 7%;
+width:100%;
+padding: 5px;
+}
+
+::placeholder
+{
+color:#fff;
+}
+.txtHeader
+{
+font-size: 25px;
+height: 100%;
+background-color: transparent;
+color:#fff;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+border:none;
+text-align: center;
+margin: auto;
+display: block;
+}
+
+.txtHeader:focus,.txtHeader:hover
+{
+border:none;
+background-color: #fff;
+color:#246ded;
+}
+
+.txtContent
+{
+height: 100%;
+width: 100%;
+color:#141414;
+background-color: #fff;
+word-wrap: break-word;
+font-family: Arial, Helvetica, sans-serif;
+padding: 10px;
+font-size: 18px;
+border:none;
+outline: none;
+}
+
+.txtContent:focus,.txtContent:hover
+{
+border:none !important;
+background-color: #f7f7f7;
+}
+
+.btn
+{
+padding: 5px;
+margin: 2px;
+background-color: #246ded;
+color:#fff;
+font-size: 18px;
+border-radius:5px;
+border:none;
+}
+
+.btn:focus,.btn:hover
+{
+
+background-color: #fff;
+color:#246ded;
+border:1px #246ded solid;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 350px;
+  perspective: 1000px;
+  float:left;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+</style>
+</head>,
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form>
+  <div class="container">
+  <img src="/Users/ragha/Downloads/attachments/\logo.jpg" alt="logo" style="width:500px" class="center"> 
+<p style="width:500px;font-size:5;color:red" class="center">    Long Term Memory for your Notes!!</p>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  
+  <div class="topnav-right">
+    <a href="#about" id="myBtn">Tips</a>
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+   <h2>Studying with notes can be an effective way to retain and understand information</h2>
+    <p>
+	1. Focus on active listening during lectures or while reading. Summarize key points in your own words rather than transcribing everything verbatim.
+</p>
+<p>
+   2. Use abbreviations, symbols, and short phrases to capture information quickly.
+ </p>
+<p>
+3. Keep your notes well-organized. Use headings, bullet points, and numbering to structure your notes logically</p>
+  </div>
+
+</div>
+  </div>
+</div>
+<h2>REGISTER</h2>
+   <font size="4"> 
+ Please fill in the form to create an account. </font>
+ <p>  
+    <label for="email" text-align="left" style="font-size:25px";><b>Email</b></label>
+</p>
+<p>
+    <input type="text" placeholder="Enter Email" name="email" id="email" style="font-size:20px" required >
+</p>
+
+    <label for="psw" style="font-size:25px"><b>Password</b></label>
+
+<p>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" style="font-size:20px" required>
+</p>
+
+    <label for="psw-repeat" style="font-size:25px"><b>Repeat Password</b></label>
+
+<p>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" style="font-size:20px" required>
+</p>    
+
+    <button type="submit" class="registerbtn" style="font-size:30px" onclick="RegAlert()">Register</button> 
+  </div>
+</div>
+  <div class="container signin">
+    <p style="font-size:25px">Already have an account? <a href="#" onclick="openForm()">Sign in</a>.</p>
+  </div>
+</form>
+
+
+<div class="form-popup" id="myForm" >
+  <form action="/action_page.php" class="form-container" style="font-size:30px">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email"  style="font-size:20px" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw"  style="font-size:20px" required>
+
+    <button type="button" class="btn"  style="font-size:30px" onclick="mainPage()" >Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()"  style="font-size:30px">Close</button>
+  </form>
+</div>
+
+<div includehtml="main.html">
+</div>
+   
+
+<footer class="footer" style="text-align: center;>
+        <div class="page-footer">
+<a href="https://www.facebook.com/" class="fa fa-facebook" class="center"></a>
+<a href="https://twitter.com/" class="fa fa-twitter" class="center"></a>
+<a href="https://www.linkedin.com/" class="fa fa-linkedin" class="center"></a>
+ </div>
+    </footer> 
+
+<style>
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 5px;
+}
+
+.container signin {
+  padding: 5px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 25%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form { 
+margin: 0 auto; 
+width:250px;
+}
+
+.form {
+  text-align: center;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+h1{
+color: purple;
+text-align: center;
+}
+
+h2{
+color: Blue;
+font-size: 40px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  //background-color: #f1f1f1;
+  text-align: left;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index:10;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.footer {
+padding-top: 10px;
+background-color: #000;
+color:#eae2d8;}
+
+.page-footer{
+width: 100%;
+padding: 50px 0px 70px 0px;
+background-color: $basic-dark-color;}
+
+p {
+font-size: 30px;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: left;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.alert {
+  opacity: 1;
+  transition: opacity 0.6s; /* 600ms to fade out */
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style> 
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function RegAlert()
+{
+	alert("Registered Succesfully!!")
+}
+
+function mainPage(){
+    window.location.href="\main.html";
+    }
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "500px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+
+</body>
+</html>
+
